@@ -21,8 +21,6 @@ async def hubspot_webhook(request: Request):
         settings = get_settings()
         enricher = Enricher(settings)
         
-        # Process webhook events here (Company/Contact enrichment)
-        
         await enricher.aclose()
         return {"status": "success"}
     except Exception as e:
